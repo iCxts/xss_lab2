@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>XSS Lab2</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<h1>Notes App</h1>
+			<p>meowmeowcat92's note app</p>
+		</header>
+
+		<div class="nav-buttons">
+			<a href="/notes" class="btn btn-primary">View All Notes</a>
+			<a href="/create" class="btn btn-secondary">Create New Note</a>
+		</div>
+
+		<div class="notes-section">
+			<h2>Recent Notes</h2>
+
+			<% if (note && note.length > 0) { %>
+				<% note.forEach(function(n) { %>
+					<div class="note-card">
+						<h3><%- n.title %></h3>
+						<p>Created: <%= n.createdAt %></p>
+						<div class="note-actions">
+							<a href="/notes/<%= n.id %>">View Note</a>
+							<a href="/report/<%= n.id %>">Report to Admin</a>
+						</div>
+					</div>
+				<% }); %>
+			<% } else { %>
+				<div class="empty-state">
+					<p>No notes yet. Create your first note!</p>
+				</div>
+			<% } %>
+		</div>
+
+	</div>
+</body>
+
+</html>

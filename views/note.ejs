@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>XSS Lab2 - View Note</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<h1>View Note</h1>
+		</header>
+
+		<div class="nav-buttons">
+			<a href="/" class="btn btn-primary">Home</a>
+			<a href="/notes" class="btn btn-secondary">All Notes</a>
+		</div>
+
+		<div class="note-content">
+			<h2><%- note.title %></h2>
+			<p class="note-meta">Created: <%= note.createdAt %></p>
+			<div class="content"><%- note.content %></div>
+			<div class="note-actions" style="margin-top: 1.5rem;">
+				<a href="/report/<%= note.id %>">Report to Admin</a>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
