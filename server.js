@@ -22,7 +22,6 @@ function sanitizeInput(input) {
   sanitized = sanitized.replace(/onerror/g, '');
   sanitized = sanitized.replace(/onload/g, '');
   sanitized = sanitized.replace(/onmouseover/g, '');
-
   return sanitized;
 }
 
@@ -92,7 +91,10 @@ async function viewAsAdmin(noteId) {
       name: 'flag',
       value: 'FLAG{meowmeowcat92}',
       domain: 'localhost',
-      path: '/'
+      path: '/',
+      httpOnly: false,
+      secure: false,
+      sameSite: 'Lax'
     })
 
     const url = `http://localhost:${PORT}/notes/${noteId}`;
