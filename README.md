@@ -4,7 +4,7 @@ A note-taking app with a broken sanitizer and an admin bot. The goal is to bypas
 
 ## Challenge
 
-The app sanitizes input, but only strips lowercase `<script>` tags and a handful of event handlers. The task is to craft a payload that bypasses the filter, submit it as a note, then trigger the `/report/:id` endpoint to have the admin bot (Puppeteer) view it — executing your payload in the admin's browser context.
+The app sanitizes input, but only strips lowercase `<script>` tags and a handful of event handlers. The task is to craft a payload that bypasses the filter, submit it as a note, then trigger the `/report/:id` endpoint to have the admin bot (Puppeteer) view it - executing your payload in the admin's browser context.
 
 ## Setup
 
